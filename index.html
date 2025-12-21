@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VectorCat</title>
+    <meta name="description" content="VectorCat builds software and apps that bring people together and strengthen human connection." />
+    <link rel="icon" type="image/png" href="Favicon_Space%20Rainbow%20Journey.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <nav class="nav">
+          <div class="logo-block">
+            <div class="brand">VectorCat</div>
+            <img src="Logo_free_nose.png" alt="VectorCat logo" />
+          </div>
+          <div class="nav-links">
+            <a href="#mission">Mission</a>
+            <a href="#apps">Apps</a>
+            <a href="#kontakt">Contact</a>
+            <!-- <a href="imprint.html">Imprint</a> -->
+            <!-- <a href="privacy.html">Privacy</a> -->
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div>
+            <div class="tag">Software + Apps + Human Connection</div>
+            <h1>We build products that help people connect, reunite, and feel closer.</h1>
+            <p>
+              VectorCat creates software and experiences that turn distance into togetherness. From playful apps to
+              focused productivity tools, our work is designed to strengthen human connection in everyday life.
+            </p>
+            <div class="hero-actions">
+              <a class="cta" href="#apps">Explore our apps</a>
+              <a class="ghost" href="#kontakt">Start a conversation</a>
+            </div>
+          </div>
+          <div class="hero-card" aria-label="Studio highlights">
+            <span>Studio focus</span>
+            <strong>Playful experiences with real-world impact</strong>
+            <div class="metrics">
+              <div class="metric">
+                <h3>Made in Mainz</h3>
+                <span>Germany</span>
+              </div>
+              <div class="metric">
+                <h3>People first</h3>
+                <span>Human-centered design</span>
+              </div>
+              <div class="metric">
+                <h3>Small team</h3>
+                <span>Focused delivery</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="mission" class="section">
+          <h2>Our mission</h2>
+          <p class="section-lead">We craft digital experiences that feel warm, modern, and meaningful.</p>
+          <div class="grid">
+            <div class="card">
+              <h3>Build connection</h3>
+              <p>We design interactions that help people reach each other faster and feel seen.</p>
+            </div>
+            <div class="card">
+              <h3>Playful focus</h3>
+              <p>Games and apps that turn focus, patience, and curiosity into joyful routines.</p>
+            </div>
+            <!-- <div class="card">
+              <h3>Careful delivery</h3>
+              <p>Small, dedicated releases with the polish and reliability users can trust.</p>
+            </div> -->
+          </div>
+        </section>
+
+        <section id="apps" class="section">
+          <h2>Apps and experiences</h2>
+          <p class="section-lead">A growing collection of playful apps designed to bring people together.</p>
+          <div class="carousel">
+            <div class="carousel-track" id="appCarousel" aria-label="App carousel">
+              <article class="app-card">
+                <!-- <div class="app-badge">Featured</div> -->
+                <img src="Favicon_Space%20Rainbow%20Journey.png" alt="Space Rainbow Journey favicon" />
+                <h3>Space Rainbow Journey</h3>
+                <p>
+                  A concentration and reaction arcade game that challenges your timing while keeping the mood bright.
+                </p>
+              </article>
+              <article class="app-card">
+                <div class="app-badge">Coming soon</div>
+                <div class="app-placeholder" aria-hidden="true"></div>
+                <h3>Subwise</h3>
+                <p>Helps you keep track of subscriptions and how often you actually use them.</p>
+              </article>
+            </div>
+            <button
+              class="carousel-arrow carousel-arrow-left"
+              type="button"
+              onclick="scrollCarousel(-1)"
+              aria-label="Previous app"
+            >
+              <
+            </button>
+            <button
+              class="carousel-arrow carousel-arrow-right"
+              type="button"
+              onclick="scrollCarousel(1)"
+              aria-label="Next app"
+            >
+              >
+            </button>
+            <div class="carousel-dots" id="appCarouselDots" aria-label="Carousel position"></div>
+          </div>
+        </section>
+
+        <section class="cta-band" id="kontakt">
+          <div class="contact-grid">
+            <h2>Let’s build something that connects people.</h2>
+            <p>Say hello and tell us what you want to bring to life. We reply within 24 hours.</p>
+            <div class="location">Based in Mainz, Germany.</div>
+          </div>
+          <a class="cta" href="mailto:hallo@vectorcat.de">Email hallo@vectorcat.de</a>
+        </section>
+      </main>
+
+      <div class="footer-spacer" aria-hidden="true"></div>
+
+      <footer>
+        <div>VectorCat UG (haftungsbeschränkt) · Mainz · Germany</div>
+        <div>
+          <a href="imprint.html">Imprint</a> · <a href="privacy.html">Privacy</a>
+        </div>
+        <div>© 2025-2026 VectorCat. All rights reserved.</div>
+      </footer>
+    </div>
+    <script>
+      const track = document.getElementById("appCarousel");
+      const dotsContainer = document.getElementById("appCarouselDots");
+      const cards = track ? Array.from(track.querySelectorAll(".app-card")) : [];
+
+      const scrollToIndex = (index) => {
+        if (!track || !cards[index]) {
+          return;
+        }
+        const card = cards[index];
+        const left = card.offsetLeft - (track.clientWidth - card.offsetWidth) / 2;
+        track.scrollTo({ left, behavior: "smooth" });
+        setActiveDot(index);
+      };
+
+      const getActiveIndex = () => {
+        if (!track || cards.length === 0) {
+          return 0;
+        }
+        const center = track.scrollLeft + track.clientWidth / 2;
+        let bestIndex = 0;
+        let bestDistance = Infinity;
+        cards.forEach((card, index) => {
+          const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+          const distance = Math.abs(center - cardCenter);
+          if (distance < bestDistance) {
+            bestDistance = distance;
+            bestIndex = index;
+          }
+        });
+        return bestIndex;
+      };
+
+      const setActiveDot = (index) => {
+        if (!dotsContainer) {
+          return;
+        }
+        Array.from(dotsContainer.children).forEach((dot, dotIndex) => {
+          dot.classList.toggle("is-active", dotIndex === index);
+        });
+      };
+
+      const scrollCarousel = (direction) => {
+        const nextIndex = Math.min(
+          Math.max(getActiveIndex() + direction, 0),
+          cards.length - 1
+        );
+        scrollToIndex(nextIndex);
+      };
+
+      if (dotsContainer && cards.length > 0) {
+        cards.forEach((card, index) => {
+          const dot = document.createElement("button");
+          dot.className = "carousel-dot";
+          dot.type = "button";
+          dot.setAttribute("aria-label", `Go to app ${index + 1}`);
+          dot.addEventListener("click", () => scrollToIndex(index));
+          dotsContainer.appendChild(dot);
+        });
+        setActiveDot(0);
+      }
+
+      if (track) {
+        track.addEventListener("scroll", () => {
+          setActiveDot(getActiveIndex());
+        });
+      }
+    </script>
+  </body>
+</html>
