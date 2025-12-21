@@ -281,16 +281,14 @@ footer {
   padding: 10px 0 30px;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .carousel-track::-webkit-scrollbar {
-  height: 6px;
+  display: none;
 }
 
-.carousel-track::-webkit-scrollbar-thumb {
-  background: rgba(18, 18, 21, 0.2);
-  border-radius: 999px;
-}
 
 .app-card {
   scroll-snap-align: center;
