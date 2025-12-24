@@ -12,11 +12,17 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
   color: var(--ink);
   background: radial-gradient(1200px 800px at 10% 10%, #fef6df 0%, #f7f4ef 35%, #f3efe8 100%);
+  overflow-x: hidden;
 }
 
 a {
@@ -27,7 +33,7 @@ a {
 .page {
   min-height: 100vh;
   position: relative;
-  overflow-x: hidden;
+  overflow: visible;
 }
 
 .page::before,
@@ -278,6 +284,7 @@ footer {
   grid-auto-columns: 100%;
   gap: 22px;
   overflow-x: auto;
+  overflow-y: hidden;
   padding: 10px 0 30px;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
