@@ -227,6 +227,10 @@ main {
   line-height: 1.7;
 }
 
+.privacy-content .fixed-message {
+  color: var(--ink);
+}
+
 .privacy-content ul {
   margin: 0;
   padding-left: 1.2rem;
@@ -451,6 +455,79 @@ footer {
 .contact-grid {
   display: grid;
   gap: 16px;
+}
+
+details.card {
+  padding: 0;
+}
+
+details.card summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 18px 22px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+details.card summary::-webkit-details-marker {
+  display: none;
+}
+
+details.card summary::after {
+  content: "▼";
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+details.card[open] summary::after {
+  content: "▲";
+}
+
+details.card form {
+  padding: 0 22px 22px;
+  display: grid;
+  gap: 14px;
+}
+
+details.card label {
+  font-weight: 600;
+}
+
+details.card input,
+details.card select,
+details.card textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(18, 18, 21, 0.18);
+  background: #ffffff;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+details.card textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+details.card button {
+  justify-self: start;
+  border: none;
+  border-radius: 999px;
+  background: var(--accent);
+  color: white;
+  padding: 12px 22px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+details.card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(18, 18, 21, 0.16);
 }
 
 .location {
