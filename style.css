@@ -32,19 +32,16 @@ a {
 }
 
 a.callout-link {
-  display: inline-block;
-  padding: 1px 8px;
-  border-radius: 999px;
-  background: rgba(15, 138, 123, 0.06);
-  border: 1px solid rgba(15, 138, 123, 0.22);
+  font-style: italic;
   font-weight: 500;
-  white-space: nowrap;
-  transition: background 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: underline;
+  text-decoration-color: rgba(15, 138, 123, 0.35);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.2s ease;
 }
 
 a.callout-link:hover {
-  background: rgba(15, 138, 123, 0.1);
-  box-shadow: 0 4px 10px rgba(18, 18, 21, 0.08);
+  text-decoration-color: rgba(15, 138, 123, 0.6);
 }
 
 .page {
