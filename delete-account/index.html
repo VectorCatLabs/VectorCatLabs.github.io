@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Account löschen – Space Rainbow Journey / VectorCat UG</title>
+    <meta name="description" content="Anfrage zur Kontolöschung für Space Rainbow Journey." />
+    <link rel="canonical" href="https://vectorcat.net/delete-account/" />
+    <meta name="robots" content="noindex,nofollow,noarchive,nosnippet" />
+    <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet" />
+    <meta name="bingbot" content="noindex,nofollow,noarchive,nosnippet" />
+    <link rel="icon" type="image/png" href="../Logo_free_nose.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <nav class="nav">
+          <div class="logo-block">
+            <div class="brand">VectorCat</div>
+            <img src="../Logo_free_nose.png" alt="VectorCat logo" />
+          </div>
+          <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../legal-notice/">Legal Notice</a>
+            <a href="../privacy/">Privacy</a>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section class="section">
+          <h1>Account löschen – Space Rainbow Journey / VectorCat UG</h1>
+          <div class="privacy-content">
+            <h2>Was passiert bei Löschung?</h2>
+            <p>Nach erfolgreicher Verifizierung löschen wir:</p>
+            <ul>
+              <li>deinen Account (inklusive Konto-ID)</li>
+              <li>deinen Spielstand</li>
+              <li>deine Highscores und Ranglisten-Einträge</li>
+              <li>verknüpfte Analytics-IDs, sofern vorhanden</li>
+            </ul>
+
+            <h2>Löschung anfordern</h2>
+            <p>Nutze das Formular oder sende eine E-Mail an <a href="mailto:privacy@vectorcat.net">privacy@vectorcat.net</a>.</p>
+            <details class="card">
+              <summary>Formular anzeigen</summary>
+              <form id="delete-account-form">
+                <label for="app">Betroffene App</label>
+                <select id="app" name="app" required>
+                  <option value="" selected disabled>Bitte auswählen</option>
+                  <option value="Space Rainbow Journey">Space Rainbow Journey</option>
+                </select>
+                <label for="email">E-Mail</label>
+                <input id="email" name="email" type="email" required />
+                <label for="username">Benutzername (optional)</label>
+                <input id="username" name="username" type="text" />
+                <br>
+                <p class="fixed-message">
+                  <strong>Vorgegebene Nachricht:</strong> Ich bitte um die Löschung meines Accounts und der zugehörigen Daten.
+                </p>
+                <br>
+                <label for="extra">Zusätzliche Informationen (optional)</label>
+                <textarea id="extra" name="extra" rows="4" placeholder="Weitere Hinweise, z. B. Gerät, Plattform, Zeitpunkt der Registrierung."></textarea>
+                <button type="submit">Löschung anfordern</button>
+              </form>
+            </details>
+
+            <h2>Zeitraum &amp; Ausnahmen</h2>
+            <p>Die Löschung erfolgt in der Regel innerhalb von bis zu 30 Tagen.</p>
+            <p>
+              Gesetzliche Aufbewahrungspflichten oder Maßnahmen zur Betrugsprävention können eine längere Speicherung
+              einzelner Daten erfordern. Solche Daten werden dann nur zu diesen Zwecken aufbewahrt und anschließend gelöscht.
+            </p>
+
+            <h2>Weitere Informationen</h2>
+            <p>Details zur Datenverarbeitung findest du in unserer <a href="../privacy/">Privacy Policy</a>.</p>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div>VectorCat · Mainz · Germany</div>
+        <div>
+          <a href="../legal-notice/">Legal Notice</a> · <a href="../privacy/">Privacy</a>
+        </div>
+        <div>© 2025-2026 VectorCat. All rights reserved.</div>
+      </footer>
+    </div>
+    <script>
+      const form = document.querySelector("#delete-account-form");
+      if (form) {
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+          const app = form.querySelector("#app").value;
+          const email = form.querySelector("#email").value;
+          const username = form.querySelector("#username").value || "n/a";
+          const message = "Ich bitte um die Löschung meines Accounts und der zugehörigen Daten.";
+          const extra = form.querySelector("#extra").value;
+          const subject = `Account loeschen - ${app}`;
+          const bodyLines = [
+            `App: ${app}`,
+            `E-Mail: ${email}`,
+            `Benutzername: ${username}`,
+            "",
+            "Nachricht:",
+            message,
+            extra ? "" : null,
+            extra ? "Zusatz:" : null,
+            extra || null
+          ];
+          const mailto = `mailto:support@deinedomain?subject=${encodeURIComponent(
+            subject
+          )}&body=${encodeURIComponent(bodyLines.filter(Boolean).join("\n"))}`;
+          window.location.href = mailto;
+        });
+      }
+    </script>
+  </body>
+</html>
