@@ -33,18 +33,18 @@ a {
 
 a.callout-link {
   display: inline-block;
-  padding: 2px 10px;
+  padding: 1px 8px;
   border-radius: 999px;
-  background: rgba(15, 138, 123, 0.12);
-  border: 1px solid rgba(15, 138, 123, 0.35);
-  font-weight: 600;
+  background: rgba(15, 138, 123, 0.06);
+  border: 1px solid rgba(15, 138, 123, 0.22);
+  font-weight: 500;
   white-space: nowrap;
   transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
 a.callout-link:hover {
-  background: rgba(15, 138, 123, 0.2);
-  box-shadow: 0 6px 16px rgba(18, 18, 21, 0.12);
+  background: rgba(15, 138, 123, 0.1);
+  box-shadow: 0 4px 10px rgba(18, 18, 21, 0.08);
 }
 
 .page {
