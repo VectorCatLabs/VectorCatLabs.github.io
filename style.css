@@ -388,6 +388,16 @@ footer {
   background: #ffffff;
 }
 
+.app-card img.store-badge {
+  width: auto;
+  height: 48px;
+  max-width: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  margin-top: 4px;
+}
+
 .app-placeholder {
   width: 100%;
   max-width: 240px;
